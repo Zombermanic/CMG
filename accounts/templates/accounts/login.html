@@ -23,7 +23,7 @@ Entrar | {{ block.super }}
                         <div class="form-group {% if form.username.errors %} has-error {% endif %}">
                           <label for="{{form.username.auto_id }}" class="col-md-3 control-label">{{ form.username.label_tag }}</label>
                           <div class="col-md-9">
-                          {% render_field form.username class='form-control' placeholder='Usuário'%}
+                          {% render_field form.username class='form-control' placeholder='Usuario'%}
                           {% for error in form.username.errors %}
                             <span class='help-block'>{{error}}</span>
                           {%endfor%}
@@ -32,7 +32,7 @@ Entrar | {{ block.super }}
                         <div class="form-group {% if form.password.errors %} has-error {% endif %}">
                           <label for="{{form.password.auto_id}}id_email" class="col-md-3 control-label">{{ form.password.label }}</label>
                           <div class="col-md-9">
-                            {% render_field form.password class="form-control" placeholder="Senha" %}
+                            {% render_field form.password class="form-control" placeholder="Contraseña" %}
                             {% for error in form.password.errors %}
                                   <span class="help-block">{{ error }}</span>
                             {% endfor %}

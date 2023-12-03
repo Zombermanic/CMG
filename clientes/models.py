@@ -21,7 +21,7 @@ class Cliente(models.Model):
     telefone = models.CharField(verbose_name="Telefone",
                                 validators=[phone_regex],
                                 max_length=17, null=True, blank=True)
-    cpf = CPFField(verbose_name="CPF",
+    cpf = models.CharField(verbose_name="RUT",
                     max_length=50,
                     unique=True,)
     
