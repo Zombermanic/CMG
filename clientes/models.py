@@ -15,7 +15,7 @@ class Cliente(models.Model):
     
     phone_regex = RegexValidator(
         regex=r'^\+?1?\d{9,15}$',
-        message="O número precisa estar neste formato: \
+        message="El número debe tener este formato: \
                         '+99 99 9999-0000'.")
 
     telefone = models.CharField(verbose_name="Telefone",
@@ -27,7 +27,7 @@ class Cliente(models.Model):
     
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, 
-        verbose_name='Usuário', 
+        verbose_name='Usuario', 
         on_delete=models.CASCADE
     )
     

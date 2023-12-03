@@ -14,7 +14,7 @@ class TestMixinIsAdmin(UserPassesTestMixin):
 
     def handle_no_permission(self):
         messages.error(
-            self.request, "Você não tem permissões!"
+            self.request, "¡No tienes permisos!"
         )
         return redirect("accounts:index")
 

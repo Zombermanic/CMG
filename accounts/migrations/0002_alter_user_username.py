@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='user',
             name='username',
-            field=models.CharField(help_text='Um nome curto que será usado para identificá-lo de forma única na plataforma.', max_length=30, unique=True, validators=[django.core.validators.RegexValidator(re.compile('^[\\w.@+-]+$'), 'Informe um nome de usuário válido. Este valor deve conter apenas letras, números e os carecteres: @/./+/-/_.', 'invalid')], verbose_name='Usuário'),
+            field=models.CharField(help_text='Un nombre corto que se utilizará para identificarlo de forma única en la plataforma.', max_length=30, unique=True, validators=[django.core.validators.RegexValidator(re.compile('^[\\w.@+-]+$'), 'Informe um nome de usuário válido. Este valor deve conter apenas letras, números e os carecteres: @/./+/-/_.', 'invalid')], verbose_name='Usuário'),
         ),
     ]

@@ -17,20 +17,20 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Especialidade',
+            name='Especialidad',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nome', models.CharField(max_length=200, verbose_name='Nome')),
+                ('nome', models.CharField(max_length=200, verbose_name='Name')),
             ],
         ),
         migrations.CreateModel(
             name='Medico',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('nome', models.CharField(max_length=200, verbose_name='Nome')),
+                ('nome', models.CharField(max_length=200, verbose_name='Name')),
                 ('email', models.EmailField(max_length=254, verbose_name='Email')),
                 ('crm', models.CharField(max_length=200, verbose_name='CRM')),
-                ('telefone', models.CharField(blank=True, max_length=17, null=True, validators=[django.core.validators.RegexValidator(message="O número precisa estar neste formato:                     '+99 99 9999-0000'.", regex='^\\+?1?\\d{9,15}$')], verbose_name='Telefone')),
+                ('telefone', models.CharField(blank=True, max_length=17, null=True, validators=[django.core.validators.RegexValidator(message="El número debe tener este formato:                     '+99 99 9999-0000'.", regex='^\\+?1?\\d{9,15}$')], verbose_name='Telefone')),
                 ('especialidade', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='medicos', to='medicos.especialidade')),
             ],
         ),
@@ -38,10 +38,10 @@ class Migration(migrations.Migration):
             name='Agenda',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('dia', models.DateField(help_text='Insira uma data para agenda', validators=[medicos.models.validar_dia])),
-                ('horario', models.CharField(choices=[('1', '07:00 ás 08:00'), ('2', '08:00 ás 09:00'), ('3', '09:00 ás 10:00'), ('4', '10:00 ás 11:00'), ('5', '11:00 ás 12:00')], max_length=10)),
+                ('dia', models.DateField(help_text='Introduzca una fecha para el calendario', validators=[medicos.models.validar_dia])),
+                ('horario', models.CharField(choices=[('1', '07:00 - 08:00'), ('2', '08:00 - 09:00'), ('3', '09:00 - 10:00'), ('4', '10:00 - 11:00'), ('5', '11:00 - 12:00')], max_length=10)),
                 ('medico', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='agenda', to='medicos.medico')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Usuário')),
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Usuario')),
             ],
             options={
                 'unique_together': {('horario', 'dia')},
