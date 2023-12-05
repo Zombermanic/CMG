@@ -14,7 +14,7 @@ class Especialidade(models.Model):
 class Medico(models.Model):
     nome = models.CharField(verbose_name="Nombre", max_length=200)
     email = models.EmailField(verbose_name="Email")
-    crm = models.CharField(verbose_name="CRM", max_length=200)
+    crm = models.CharField(verbose_name="RUT", max_length=200)
     phone_regex = RegexValidator(
     regex=r'^\+?1?\d{9,15}$',
     message="El número debe tener este formato: \
